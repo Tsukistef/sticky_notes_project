@@ -1,0 +1,11 @@
+<!-- templates/view_note.html -->
+{% extends "base.html" %}
+{% block title %}View Note{% endblock %}
+{% block content %}
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.body }}</p>
+    <p>Created at: {{ note.created_at }}</p>
+    <p>Created by: {{ note.user.username }}</p>
+    <a href="{% url 'edit_note' note.id %}">Edit</a>
+    <a href="{% url 'delete_note' note.id %}">Delete</a>
+{% endblock %}

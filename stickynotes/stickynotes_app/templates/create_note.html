@@ -1,0 +1,11 @@
+<!-- templates/create_note.html -->
+{% extends "base.html" %}
+{% block title %}Create Note{% endblock %}
+{% block content %}
+    <h2>Create Note</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Note</button>
+    </form>
+{% endblock %}

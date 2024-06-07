@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'stickynotes_app/css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'main_board' %}">Sticky Notes Board</a>
+        </nav>
+    </header>
+
+    <main>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <script>
+            // Hide messages after 3 seconds
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $('.messages').fadeOut('slow');
+                }, 3000);
+            });
+        </script>
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Stefania Fiorucci</p>
+    </footer>
+</body>
+</html>
