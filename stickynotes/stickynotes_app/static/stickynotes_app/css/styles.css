@@ -1,6 +1,6 @@
-/* styles.css */
-
 /* General Styles */
+
+/* Set font, background color, and basic layout for the body */
 body {
     font-family: Arial, sans-serif;
     background-color: white;
@@ -10,6 +10,8 @@ body {
 }
 
 /* Header and Navigation */
+
+/* Style the header with a background color and text color */
 header {
     background-color: purple;
     color: rgb(254, 212, 255);
@@ -17,55 +19,110 @@ header {
     text-align: center;
 }
 
+/* Style links in the navigation bar */
 nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
 }
 
+/* Add underline to nav links on hover */
 nav a:hover {
     text-decoration: underline;
 }
 
+/* Board Settings */
+
+/* Add padding to the board container */
+.board {
+    padding: 20px;
+}
+
+/* Define the sticky notes grid layout */
+.sticky-notes-grid {
+    display: grid; /* Use CSS Grid Layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns with min width of 200px */
+    gap: 8px; /* Space between the sticky notes */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* Style individual sticky notes */
+.sticky-note {
+    padding: 15px; /* Padding inside each note */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Style for the sticky note title */
+.sticky-note h3 {
+    margin: 0 0 10px 0; /* Margin below the title */
+}
+
+/* Style links within sticky note titles */
+.sticky-note h3 a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Add underline to sticky note title links on hover */
+.sticky-note h3 a:hover {
+    text-decoration: underline;
+}
+
+/* Remove margin for the sticky note content */
+.sticky-note p {
+    margin: 0;
+}
+
 /* Main Content */
+
+/* Add padding to the main content area */
 main {
     padding: 20px;
 }
 
 /* Forms */
+
+/* Style the form container */
 form {
     background-color: pink;
     border: 1px solid purple;
     border-radius: 5px;
     padding: 20px;
-    max-width: 400px;
-    margin: auto;
+    max-width: 400px; /* Max width for the form */
+    margin: auto; /* Center the form */
 }
 
+/* Style the form heading */
 form h2 {
-    margin-top: 0;
+    margin-top: 0; /* Remove top margin */
 }
 
+/* Style text and password inputs in the form */
 form input[type="text"],
 form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid purple;
-    border-radius: 5px;
-    max-width: 300px;
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside inputs */
+    margin: 10px 0; /* Margin around inputs */
+    border: 1px solid purple; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    max-width: 300px; /* Max width for inputs */
 }
 
+/* Style the form button */
 form button {
     background-color: purple;
     color: rgb(248, 205, 242);
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    border: 1px;
-    cursor: pointer;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Change button styles on hover */
 form button:hover {
     background-color: white;
     color: purple;
@@ -73,31 +130,51 @@ form button:hover {
 }
 
 /* Sticky notes list */
+
+/* General styles for unordered lists */
 ul {
-    list-style: none;
+    list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 10px 0;
 }
 
+/* General styles for list items */
 ul li {
     background-color: pink;
     border: 1px solid purple;
     border-radius: 5px;
     padding: 10px;
-    margin: 5px 0;
+    margin: 5px 0; /* Space between list items */
+}
+
+/* Footer */
+
+/* Style the footer */
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: purple;
+    color: white;
+    position: fixed; /* Fix to bottom of the page */
+    bottom: 0;
+    width: 100%;
+    height: 30px;
 }
 
 /* Messages */
+
+/* Style for the messages container */
 .messages {
-    position: fixed;
+    position: fixed; /* Fixed position */
     top: 10px;
     right: 10px;
-    z-index: 1000;
-    list-style: none;
+    z-index: 1000; /* Ensure it's on top */
+    list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0;
 }
 
+/* General styles for individual messages */
 .messages li {
     margin-bottom: 10px;
     padding: 10px;
@@ -106,12 +183,14 @@ ul li {
     border: 1px solid purple;
 }
 
+/* Success message styles */
 .messages li.success {
     background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
+/* Error message styles */
 .messages li.error {
     background-color: #f8d7da;
     color: #721c24;

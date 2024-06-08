@@ -146,7 +146,7 @@ def main_board(request):
 
         Returns:
             HttpResponse: The rendered main board page with all sticky notes.'''
-    notes = StickyNote.objects.all()
+    notes = StickyNote.objects.all().order_by('-created_at')  # Order by created_at in descending order
     return render(request, "main_board.html", {"notes": notes})
 
 

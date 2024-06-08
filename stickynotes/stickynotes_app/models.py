@@ -42,10 +42,11 @@ class StickyNote(models.Model):
         created_at (DateTimeField): A field for the creation timestamp of the sticky note.
         user (ForeignKey): A reference to the User model,
         representing the user who created the sticky note.    '''
+    # Allow user to customize note color
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    
     def __str__(self):
         return self.title
