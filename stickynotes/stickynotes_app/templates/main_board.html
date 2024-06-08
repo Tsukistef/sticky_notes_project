@@ -15,7 +15,8 @@
         <ul class="sticky-notes-grid">
             <!-- Loop through each note and create a list item -->
             {% for note in notes %}
-                <li class="sticky-note">
+                <!-- This represents the Sticky note -->
+                <li class="sticky-note" style="background-color: {{ note.color }};">
                     <!-- Note title as a clickable link -->
                     <h3><a href="{% url 'view_note' note.id %}">{{ note.title }}</a></h3>
                     <!-- Note content -->

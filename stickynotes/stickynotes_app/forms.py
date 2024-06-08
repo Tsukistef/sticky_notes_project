@@ -39,4 +39,4 @@ class StickyNoteForm(forms.ModelForm):
                             These fields are 'title' and 'body'.
         '''
         model = StickyNote
-        fields = ('title', 'body')
+        fields = ['title', 'body', 'color']
