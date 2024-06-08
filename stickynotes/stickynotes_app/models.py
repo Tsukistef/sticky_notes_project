@@ -44,17 +44,18 @@ class StickyNote(models.Model):
         representing the user who created the sticky note.    '''
     # Allow user to customize note color
     COLOR_CHOICES = (
-        ('yellow', 'Yellow'),
-        ('blue', 'Blue'),
-        ('green', 'Green'),
-        ('pink', 'Pink'),
-        ('red', 'Red')
+        ('#FFB3BA', 'Soft Pink'),
+        ('#FFDFBA', 'Peach'),
+        ('#FFFFBA', 'Light Yellow'),
+        ('#BAFFC9', 'Light Green'),
+        ('#BAE1FF', 'Light Blue'),
+        ('#D3C4E3', 'Lavender')
     )
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    color = models.CharField(max_length=20, choices=COLOR_CHOICES, default='yellow')
+    color = models.CharField(max_length=20, choices=COLOR_CHOICES, default='#FFFFBA')
     
     def __str__(self):
         return self.title
