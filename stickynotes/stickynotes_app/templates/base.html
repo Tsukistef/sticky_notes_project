@@ -7,25 +7,40 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="{% url 'register' %}">Register</a>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'logout' %}">Logout</a>
-            <a href="{% url 'main_board' %}">Sticky Notes Board</a>
-        </nav>
-    </header>
-
+    <div>
+        <header>
+            <nav>
+                <div style="display:inline-block;">
+                    <div style="display:inline-block;">
+                        <a href="{% url 'register' %}">Register</a>
+                    </div>
+                    <div style="display:inline-block;">
+                        <a href="{% url 'home' %}">Home</a>
+                    </div>
+                    <div style="display:inline-block;">
+                        <a href="{% url 'login' %}">Login</a>
+                    </div>
+                    <div style="display:inline-block;">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                    <div style="display:inline-block;">
+                        <a href="{% url 'main_board' %}">Sticky Notes Board</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
     <main>
         {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li class="{{ message.tags }}">{{ message }}</li>
-                {% endfor %}
-            </ul>
+            <div>
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         {% endif %}
-        
+
         <script>
             // Hide messages after 3 seconds
             $(document).ready(function() {
@@ -38,9 +53,10 @@
         {% block content %}
         {% endblock %}
     </main>
-
-    <footer>
-        <p>&copy; 2024 Stefania Fiorucci</p>
-    </footer>
+    <div>
+        <footer>
+            <p>&copy; 2024 Stefania Fiorucci</p>
+        </footer>
+    </div>
 </body>
 </html>
