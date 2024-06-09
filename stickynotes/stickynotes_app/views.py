@@ -216,7 +216,7 @@ def edit_note(request, note_id):
                 return redirect("main_board")
         else:
             form = StickyNoteForm(instance=note)
-        return render(request, "edit_note.html", {"form": form})
+        return render(request, "edit_note.html", {"form": form, "note": note})
 
 
 # Delete sticky note view - allows user to delete note from main board.
