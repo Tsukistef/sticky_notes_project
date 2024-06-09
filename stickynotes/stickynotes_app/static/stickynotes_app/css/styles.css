@@ -108,6 +108,7 @@ form {
     padding: 20px;
     max-width: 400px; /* Max width for the form */
     margin: auto; /* Center the form */
+    margin-bottom: 40px;
 }
 
 /* Style the form heading */
@@ -116,7 +117,7 @@ form h2 {
     text-align: center; /* Center the form heading */
 }
 
-/* Style text and password inputs in the form */
+/* Style email text and password inputs in the form */
 form input[type="text"],
 form input[type="password"] {
     width: 100%; /* Full width */
