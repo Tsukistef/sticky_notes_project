@@ -50,3 +50,10 @@ class NoteViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Test Note')
         self.assertContains(response, 'This is a test note')
+
+    def test_delete_note_view(self):
+        # Test the delete note view
+        self.client.login(username='test_author', password='testpassword')
+        response = self.client.post(reverse('delete_note', args=[self.note.id]))
+        self.assertEqual(response.status_code, 302)  # Expecting a redirect status code
+        self.assertFalse(StickyNote.objects.filter(id=self.note.id).exists())  # Check if the note has been deleted
