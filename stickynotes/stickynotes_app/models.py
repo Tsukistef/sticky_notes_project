@@ -12,9 +12,8 @@ Classes:
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
-# Model representing the user profile - will use this to customise user info in the future update
 
-
+# Model representing the user profile - will use this to customise user info in the future updates
 class Profile(models.Model):
     '''Model representing the user profile.
 
