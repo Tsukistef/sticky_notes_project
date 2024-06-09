@@ -40,3 +40,6 @@ class StickyNoteForm(forms.ModelForm):
         '''
         model = StickyNote
         fields = ['title', 'body', 'color']
+        widgets = {
+            'color': forms.Select(choices=StickyNote.COLOR_CHOICES)
+        }

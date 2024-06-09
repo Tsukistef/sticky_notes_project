@@ -4,10 +4,14 @@
 
 {% block content %}
     <!-- Heading for the main board -->
-    <h2>Main Board</h2>
+    <div>
+        <h2>Main Board</h2>
+    </div>
 
     <!-- Link to create a new sticky note -->
-    <a href="{% url 'create_note' %}">Create New Note</a>
+    <div>
+        <a href="{% url 'create_note' %}" class="button">+ ADD NEW NOTE</a>
+    </div>
 
     <!-- Container for the sticky notes grid -->
     <div class="board">

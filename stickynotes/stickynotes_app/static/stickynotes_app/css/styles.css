@@ -86,6 +86,9 @@ main {
 }
 
 /* Forms */
+.form-notecreation {
+    background-color: #FFFFBA;
+}
 
 /* Style the form container */
 form {
@@ -116,9 +119,9 @@ form input[type="password"] {
 /* Style the form button */
 form button {
     background-color: purple;
-    color: rgb(248, 205, 242);
+    color: white;
     padding: 10px 20px;
-    border: none; /* Remove default border */
+    border: 1px solid purple; /* keep border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
 }
@@ -126,7 +129,32 @@ form button {
 /* Change button styles on hover */
 form button:hover {
     background-color: white;
+    border: 1px solid purple;
     color: purple;
+}
+
+/* Other buttons style */
+.button {
+    background-color: purple;
+    color: rgb(248, 205, 242);
+    border: 1px solid purple;
+    border-radius:5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the total width and height */
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px 10px; /*less padding for a lighter style*/
+    text-align: center;
+    text-decoration: none; /* Remove underline from links styled as buttons*/
+    margin: 0 5px; /* Space between buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Change button styles on hover */
+.button:hover {
+    color: purple;
+    background-color: pink;
+    border-color: purple;
     border: 1px solid purple;
 }
 

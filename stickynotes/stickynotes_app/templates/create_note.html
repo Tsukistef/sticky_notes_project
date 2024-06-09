@@ -4,7 +4,7 @@
 {% block content %}
     <div>
         <h2>Create Note</h2>
-        <form method="post">
+        <form method="post" class="form-notecreation">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Save Note</button>
