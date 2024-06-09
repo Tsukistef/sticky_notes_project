@@ -17,6 +17,15 @@ A Django web application that allows users to create, edit, and delete sticky no
 - Django 3.x or higher
 - Git
 
+## What's improved 1.1
+
+- Sorted from newest to oldest
+- Added dropdown menu for sticky note color choice
+- Buttons style updated
+- Fixed navigation bar alignment
+- Improved responsive design
+- Sticky note form shows color preview in create/edit mode
+
 ### Installation
 
 1. Clone the repository:
