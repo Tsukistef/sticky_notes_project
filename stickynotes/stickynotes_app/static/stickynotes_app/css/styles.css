@@ -1,5 +1,10 @@
 /* General Styles */
 
+/* Centers div */
+.centered {
+    text-align: center; /* Center the form heading */
+}
+
 /* Set font, background color, and basic layout for the body */
 body {
     font-family: Arial, sans-serif;
@@ -54,18 +59,21 @@ nav a:hover {
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
-    color: black
+    color: black;
+    border: 1px solid purple;
 }
 
 /* Style for the sticky note title */
 .sticky-note h3 {
     margin: 0 0 10px 0; /* Margin below the title */
+    text-align: center; /* Center the title text */
 }
 
 /* Style links within sticky note titles */
 .sticky-note h3 a {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove underline */
+    text-align: center; /* Center the title text */
 }
 
 /* Add underline to sticky note title links on hover */
@@ -76,6 +84,8 @@ nav a:hover {
 /* Remove margin for the sticky note content */
 .sticky-note p {
     margin: 0;
+    margin-bottom: 30px;
+    text-align: center; /* Center the paragraph text */
 }
 
 /* Main Content */
@@ -103,6 +113,7 @@ form {
 /* Style the form heading */
 form h2 {
     margin-top: 0; /* Remove top margin */
+    text-align: center; /* Center the form heading */
 }
 
 /* Style text and password inputs in the form */

@@ -3,7 +3,9 @@
 {% block title %}Create Note{% endblock %}
 {% block content %}
     <div>
-        <h2>Create Note</h2>
+        <div class="centered">
+            <h2>Create Note</h2>
+        </div>
         <form method="post" class="form-notecreation">
             {% csrf_token %}
             {{ form.as_p }}
