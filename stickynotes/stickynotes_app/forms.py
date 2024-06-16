@@ -4,7 +4,7 @@ login & register user, and to write a new sticky note.'''
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
-from .models import StickyNote
+from .models import StickyNote, Profile
 
 
 class LoginForm(forms.Form):
@@ -43,3 +43,14 @@ class StickyNoteForm(forms.ModelForm):
         widgets = {
             'color': forms.Select(choices=StickyNote.COLOR_CHOICES)
         }
+        
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+        
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['bio', 'location', 'birth_date']

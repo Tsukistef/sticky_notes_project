@@ -17,8 +17,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import RegistrationForm
-from .models import StickyNote
-from .forms import StickyNoteForm
+from .models import StickyNote, Profile
+from .forms import StickyNoteForm, UserForm, ProfileForm
 
 
 # Create your views here.
@@ -137,6 +137,28 @@ def register_view(request):
     return render(request, "registration/register.html", {"form": form})
 
 
+@login_required
+def profile_view(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile was successfully updated!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+    
+    return render(request, 'profile.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
+
+# Main sticky notes page
 @login_required
 def main_board(request):
     '''Sticky notes main board view. Displays all sticky notes.
